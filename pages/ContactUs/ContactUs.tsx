@@ -165,7 +165,7 @@ const ContactUs: NextPage = () => {
                         <br></br>
                         <div className="container1">
                             <p className="headerFont">Contact Us Form&nbsp;&nbsp;</p>
-                            <form method = "POST" action="/ContactUs/action_page.php" name="ContactUs" className="margin-left">
+                            <form method = "POST" action="/ContactUs/action_page.php" onSubmit={handleSubmit} name="ContactUs" className="margin-left">
                                 <label htmlFor="fullName">Full Name</label>
                                 <input type="text" id="fullName" name="fullName" placeholder="Name"/>
                                 <div id="name_error" className="val_error"></div>
