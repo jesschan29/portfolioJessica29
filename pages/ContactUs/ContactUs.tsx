@@ -8,14 +8,6 @@ import Link from "next/link";
 import inputValidation from "./contactUsFormValidate";
 
 const ContactUs: NextPage = () => {
-    const [fullName] = useState<string>("");
-    const [user_message] = useState<string>("");
-    const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-        event.preventDefault();
-        if (inputValidation(fullName, user_message)) {
-            console.log("Your form have been successfully submitted, We will reply to you as soon as possible, Thank you 😊");
-        }
-    };
 
     return (
         <div className="bg">
@@ -165,7 +157,7 @@ const ContactUs: NextPage = () => {
                         <br></br>
                         <div className="container1">
                             <p className="headerFont">Contact Us Form&nbsp;&nbsp;</p>
-                            <form method = "POST" action="/ContactUs/action_page.php" onSubmit={handleSubmit} name="ContactUs" className="margin-left">
+                            <form method = "POST" action="/ContactUs/action_page.php" name="ContactUs" className="margin-left">
                                 <label htmlFor="fullName">Full Name</label>
                                 <input type="text" id="fullName" name="fullName" placeholder="Name"/>
                                 <div id="name_error" className="val_error"></div>
