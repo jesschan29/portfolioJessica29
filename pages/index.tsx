@@ -105,15 +105,15 @@ const Home: NextPage = () => {
           display: inline-block;
           transition: transform 0.3s ease-in-out;
           width: auto;
-          margin: 0 20px 0 20px;
+          margin: 0 20px 0 50px;
           align-items: center;
-          height: auto;
+          height: 10%;
         }
 
         .containerContact2:hover {
           transform: scale(1.10);
-          box-shadow: 0 2px 13px rgba(128, 0, 64, 0.3);
-          border-radius: 30%;
+          box-shadow: 2px 5px 20px rgba(128, 0, 64, 0.6);
+          border-radius: 50%;
         }
 
         .iconContact {
@@ -196,13 +196,13 @@ const Home: NextPage = () => {
               </div>
               <div className="containerContact">
                 <div className="containerContact2">
-                  <a href="https://www.instagram.com/jesschan2929?utm_source=qr&igsh=MzNlNGNkZWQ4Mg%3D%3D"><Image src="/images/Contacts/instagram1.png" alt="Instagram" className="icon" width={45} height={65}></Image></a>
+                  <a href="https://www.instagram.com/jesschan2929?utm_source=qr&igsh=MzNlNGNkZWQ4Mg%3D%3D"><Image src="/images/Contacts/instagram1.png" alt="Instagram" className="iconContact" width={60} height={60}></Image></a>
                 </div>
                 <div className="containerContact2">
-                  <a href="https://www.facebook.com/profile.php?id=100084389784003&sk=about"><Image src="/images/Contacts/facebook1.png" alt="Facebook" className="icon" width={45} height={65}></Image></a>
+                  <a href="https://www.facebook.com/profile.php?id=100084389784003&sk=about"><Image src="/images/Contacts/facebook1.png" alt="Facebook" className="iconContact" width={60} height={60}></Image></a>
                 </div>
                 <div className="containerContact2">
-                  <a href="https://www.linkedin.com/in/jessica-jessica-b2910224b/"><Image src="/images/Contacts/linkedin1.png" alt="LinkedIn" className="icon" width={45} height={65}></Image></a>
+                  <a href="https://www.linkedin.com/in/jessica-jessica-b2910224b/"><Image src="/images/Contacts/linkedin1.png" alt="LinkedIn" className="iconContact" width={60} height={60}></Image></a>
                 </div>
               </div>
               <div className="containerDiv picture">

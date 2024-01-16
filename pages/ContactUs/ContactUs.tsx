@@ -5,10 +5,8 @@ import styles from '../../styles/Home.module.css';
 import Navbar from '../../Components/Navigation/Navbar';
 import Image from "next/image";
 import Link from "next/link";
-import inputValidation from "./contactUsFormValidate";
 
 const ContactUs: NextPage = () => {
-
     return (
         <div className="bg">
             <style jsx>{`
@@ -157,13 +155,11 @@ const ContactUs: NextPage = () => {
                         <br></br>
                         <div className="container1">
                             <p className="headerFont">Contact Us Form&nbsp;&nbsp;</p>
-                            <form method = "POST" action="/ContactUs/action_page.php" name="ContactUs" className="margin-left">
+                            <form action="/ContactUs/action_page.php" method = "POST" name="ContactUs" className="margin-left">
                                 <label htmlFor="fullName">Full Name</label>
                                 <input type="text" id="fullName" name="fullName" placeholder="Name"/>
-                                <div id="name_error" className="val_error"></div>
                                 <label htmlFor="user_message">Your Queries</label>
                                 <textarea id="user_message" name="user_message" placeholder="Please Write Your Queries Here..." style={{height:'200px'}}></textarea>
-                                <div id="user_message_error" className="val_error"></div>
                                 <br></br>
                                 <div className="align-center">
                                     <input type="submit" value="Submit" name="ContactUs"/>
