@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../../styles/Home.module.css';
@@ -7,6 +7,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ContactUs: NextPage = () => {
+    const [fullName, setFullName] = useState('');
+    const [userMessage, setUserMessage] = useState('');
+    const [submissionResult, setSubmissionResult] = useState<string | null>(null);
+
+    const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        // Check if required fields have values
+        if (fullName && userMessage) {
+            // Successful submission
+            setSubmissionResult('SUCCESSFUL');
+            window.alert('Successful Submission!');
+            window.location.reload();
+        } else {
+            // Failed submission
+            setSubmissionResult('FAILED');
+            window.alert('Failed Submission! Please fill in all required fields.');
+        }
+    };
     return (
         <div className="bg">
             <style jsx>{`
@@ -155,16 +174,17 @@ const ContactUs: NextPage = () => {
                         <br></br>
                         <div className="container1">
                             <p className="headerFont">Contact Us Form&nbsp;&nbsp;</p>
-                            <form action="/ContactUs/action_page.php" method = "POST" name="ContactUs" className="margin-left">
+                            <form method="POST" name="ContactUs" className="margin-left" onSubmit={handleFormSubmit}>
                                 <label htmlFor="fullName">Full Name</label>
-                                <input type="text" id="fullName" name="fullName" placeholder="Name"/>
+                                <input type="text" id="fullName" name="fullName" placeholder="Name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
                                 <label htmlFor="user_message">Your Queries</label>
-                                <textarea id="user_message" name="user_message" placeholder="Please Write Your Queries Here..." style={{height:'200px'}}></textarea>
+                                <textarea id="user_message" name="user_message" placeholder="Please Write Your Queries Here..." style={{ height: '200px' }} value={userMessage} onChange={(e) => setUserMessage(e.target.value)}></textarea>
                                 <br></br>
                                 <div className="align-center">
-                                    <input type="submit" value="Submit" name="ContactUs"/>
+                                    <input type="submit" value="Submit" name="ContactUs" />
                                 </div>
                             </form>
+
                         </div>
                         <a href="mailto:jessicachan292003@gmail.com">
                             <div className="containerDiv container1 p-4">

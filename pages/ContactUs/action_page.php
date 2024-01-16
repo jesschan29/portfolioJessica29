@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($fullName) && !empty($user_message)) {
         // Successful submission, redirect to homepage
         alert("SUCCESSFUL");
-        header("Location: ./index.tsx"); // Replace with the actual URL of your homepage
+        header("Location: /"); // Replace with the actual URL of your homepage
         exit();
     } else {
         // Failed submission, reload the current page
